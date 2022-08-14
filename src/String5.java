@@ -6,7 +6,11 @@
 //Chuỗi B: boy
 //=> In ra màn hình "Chuỗi B xuất hiện 2 lần trong chuỗi A", các vị trí xuất hiện lần lượt là: "6, 23"
 
+import com.sun.deploy.util.StringUtils;
+
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class String5 {
     public static void main(String[] args) {
@@ -18,17 +22,20 @@ public class String5 {
         System.out.println("Nhap vao chuoi B: ");
         String b = input.nextLine();
 
-        String[] c = a.split("\\s");
+//        Pattern c = Pattern.compile(b);
+//        Matcher d = c.matcher(a);
+//
+//        int i = 0;
+//        while (d.find()) {
+//            i++;
+//        }
+//        System.out.println("So lan xuat hien cua chuoi B trong A la; " + i);
 
-        int sum = 0;
-        for (int i = 0; i < c.length; i++) {
-            if(c[i].length() > 0){
-                boolean d = c[i].contains(b);
-                if (d == true){
-                    sum ++;
-                }
-            }
+        int m = 0;
+        for (int j = 0; (j = a.indexOf(b, j)) != -1; j++) {
+            System.out.println("Chuoi B xuat hien tai vi tri thu:  " + j);
+            m++;
         }
-        System.out.format("Chuoi B xuat hien %d lan trong chuoi A ",sum);
+        System.out.println("So lan xuat hien cua chuoi B la: " + m);
     }
 }
