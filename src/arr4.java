@@ -20,5 +20,6 @@ public class arr4 {
 
         System.out.println("Số lớn nhất là: " + max + " Index là: " + index1);
         System.out.println("Số nhỏ nhất là: " + min + " Index là: " + index2);
+        System.out.println("Test for git");
     }
 }
